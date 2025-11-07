@@ -110,26 +110,6 @@ Authorization: Bearer YOUR_TOKEN_HERE
 - `PUT /api/tasks/:id` - Cập nhật task
 - `DELETE /api/tasks/:id` - Xóa task
 
-## Hướng dẫn chi tiết
-
-### Cho Backend Developer
-
-- Xem `Docs/JWT_TEST_GUIDE.md` - Test API với Postman
-- Xem `Docs/PROJECT_API_DOCUMENTATION.md` - Chi tiết Project API
-- Xem `Docs/TASK_API_DOCUMENTATION.md` - Chi tiết Task API
-
-### Cho Frontend Developer (WinForm C#)
-
-- Xem `Docs/WINFORM_JWT_GUIDE.md` - Hướng dẫn tích hợp JWT
-- **Test với WinForm App**: [Download tại đây](https://github.com/NAUTH05/PROJECT_TaskScheduler/releases)
-  - Tải **Release version Local**
-  - Chạy app và test API endpoints
-  - Full source code C# có sẵn
-- **Test với WinForm App Publish**: [Download tại đây](https://github.com/NAUTH05/PROJECT_TaskScheduler/releases)
-  - Tải **Release version**
-  - Chạy app và test API endpoints
-  - Full source code C# có sẵn
-
 ## Tech Stack
 
 - **Runtime**: Node.js
