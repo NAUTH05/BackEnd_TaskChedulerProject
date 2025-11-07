@@ -126,7 +126,7 @@ Authorization: Bearer YOUR_TOKEN_HERE
   - Chạy app và test API endpoints
   - Full source code C# có sẵn
 - **Test với WinForm App Publish**: [Download tại đây](https://github.com/NAUTH05/PROJECT_TaskScheduler/releases)
-  - Tải **Release version Local**
+  - Tải **Release version**
   - Chạy app và test API endpoints
   - Full source code C# có sẵn
 
