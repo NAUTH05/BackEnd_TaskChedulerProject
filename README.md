@@ -2,27 +2,27 @@
 
 Backend API cho ứng dụng quản lý dự án và công việc, sử dụng Node.js, Express, Firebase Firestore và JWT Authentication.
 
-## 📋 Tính năng chính
+## Tính năng chính
 
-### 🔐 Authentication (JWT)
+### Authentication (JWT)
 
 - Đăng ký người dùng
 - Đăng nhập với token
 - Xác thực API endpoints
 
-### 👤 User Management
+### User Management
 
 - Tạo tài khoản
 - Đăng nhập
 - Quản lý thông tin người dùng
 
-### 📁 Project Management
+### Project Management
 
 - Tạo, sửa, xóa project
 - Lọc project theo owner hoặc status
 - Quản lý thông tin project (tên, mô tả, ngày bắt đầu/kết thúc, trạng thái)
 
-### ✅ Task Management
+### Task Management
 
 - Tạo, sửa, xóa task
 - Gán task cho user
@@ -30,7 +30,7 @@ Backend API cho ứng dụng quản lý dự án và công việc, sử dụng N
 - Quản lý status (To Do, In Progress, Done, Blocked)
 - Lọc task theo project, user, status, priority
 
-## 🚀 Cài đặt và chạy
+## Cài đặt và chạy
 
 ### 1. Clone hoặc download project
 
@@ -53,9 +53,9 @@ node index.js
 
 Server sẽ chạy tại: `http://localhost:3300`
 
-## 📚 API Documentation
+## API Documentation
 
-### 🔓 Public APIs (Không cần token)
+### Public APIs (Không cần token)
 
 #### Register
 
@@ -86,7 +86,7 @@ Response sẽ chứa `token` - lưu lại để dùng cho các API tiếp theo.
 
 ---
 
-### 🔒 Protected APIs (Cần token)
+### Protected APIs (Cần token)
 
 Tất cả các API dưới đây cần token trong header:
 
@@ -110,25 +110,27 @@ Authorization: Bearer YOUR_TOKEN_HERE
 - `PUT /api/tasks/:id` - Cập nhật task
 - `DELETE /api/tasks/:id` - Xóa task
 
-## 📖 Hướng dẫn chi tiết
+## Hướng dẫn chi tiết
 
 ### Cho Backend Developer
 
-- Xem `JWT_TEST_GUIDE.md` - Test API với Postman
-- Xem `PROJECT_API_DOCUMENTATION.md` - Chi tiết Project API
-- Xem `TASK_API_DOCUMENTATION.md` - Chi tiết Task API
+- Xem `Docs/JWT_TEST_GUIDE.md` - Test API với Postman
+- Xem `Docs/PROJECT_API_DOCUMENTATION.md` - Chi tiết Project API
+- Xem `Docs/TASK_API_DOCUMENTATION.md` - Chi tiết Task API
 
 ### Cho Frontend Developer (WinForm C#)
 
-- Xem `WINFORM_JWT_GUIDE.md` - Hướng dẫn tích hợp đầy đủ
-- Có code mẫu C# để login, gọi API với token
-- Có class AuthManager và ApiHelper sẵn
+- Xem `Docs/WINFORM_JWT_GUIDE.md` - Hướng dẫn tích hợp JWT
+- **Test với WinForm App**: [Download tại đây](https://github.com/NAUTH05/PROJECT_TaskScheduler/releases)
+  - Tải **Release version Local**
+  - Chạy app và test API endpoints
+  - Full source code C# có sẵn
+- **Test với WinForm App Publish**: [Download tại đây](https://github.com/NAUTH05/PROJECT_TaskScheduler/releases)
+  - Tải **Release version Local**
+  - Chạy app và test API endpoints
+  - Full source code C# có sẵn
 
-### Tổng kết Implementation
-
-- Xem `JWT_IMPLEMENTATION_SUMMARY.md` - Tổng quan JWT
-
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Runtime**: Node.js
 - **Framework**: Express.js
@@ -137,7 +139,7 @@ Authorization: Bearer YOUR_TOKEN_HERE
 - **ID Generator**: nanoid
 - **Environment**: dotenv
 
-## 📦 Dependencies
+## Dependencies
 
 ```json
 {
@@ -150,46 +152,20 @@ Authorization: Bearer YOUR_TOKEN_HERE
 }
 ```
 
-## 🔑 Environment Variables
+## Environment Variables
 
 File `.env`:
 
 ```env
 PORT=3300
-JWT_SECRET=my_secret_key_taskscheduler_2024_huannguyet
+JWT_SECRET=my_secret_key_taskscheduler_2024_thuannguyen
 JWT_EXPIRES_IN=7d
 FIREBASE_PROJECT_ID=your_project_id
 FIREBASE_CLIENT_EMAIL=your_client_email
 FIREBASE_PRIVATE_KEY=your_private_key
 ```
 
-## 🏗 Cấu trúc Project
-
-```
-BackEnd_NodeJS_TaskSchedulerProject/
-├── config/
-│   └── firebase.js           # Firebase configuration
-├── middleware/
-│   └── authMiddleware.js     # JWT authentication middleware
-├── Public/
-│   ├── models/
-│   │   ├── User.js          # User model
-│   │   ├── Project.js       # Project model
-│   │   └── Task.js          # Task model
-│   ├── userAPI.js           # User endpoints
-│   ├── ProjectAPI.js        # Project endpoints
-│   └── TaskAPI.js           # Task endpoints
-├── services/
-│   └── CounterService.js
-├── .env                      # Environment variables
-├── index.js                  # Main server file
-├── package.json
-├── WINFORM_JWT_GUIDE.md     # WinForm integration guide
-├── JWT_TEST_GUIDE.md        # API testing guide
-└── JWT_IMPLEMENTATION_SUMMARY.md
-```
-
-## 🎯 Use Cases
+## Use Cases
 
 ### 1. User đăng ký và đăng nhập
 
@@ -209,7 +185,7 @@ Login → Get Token → Create Project → Get Projects → Update → Delete
 Login → Get Token → Create Task → Assign to User → Update Status → Complete
 ```
 
-## ⚠️ Security Notes
+## Security Notes
 
 1. **JWT Secret**: Đổi JWT_SECRET trong production
 2. **HTTPS**: Dùng HTTPS trong production
@@ -217,7 +193,7 @@ Login → Get Token → Create Task → Assign to User → Update Status → Com
 4. **Token Expiry**: Token hết hạn sau 7 ngày
 5. **Password**: Nên hash password (bcrypt) trong production
 
-## 🧪 Testing
+## Testing
 
 ### Test với Postman
 
@@ -227,14 +203,20 @@ Login → Get Token → Create Task → Assign to User → Update Status → Com
 4. Thử API không có token → Expect 401
 5. Thử token sai → Expect 403
 
-### Test với WinForm
+### Test với WinForm Application
 
-1. Tạo LoginForm theo hướng dẫn
-2. Login và lưu token
-3. Gọi API với token trong header
-4. Xử lý lỗi 401/403
+**Download sẵn tại**: [https://github.com/NAUTH05/PROJECT_TaskScheduler/releases](https://github.com/NAUTH05/PROJECT_TaskScheduler/releases)
 
-## 📞 Support
+1. Tải **Release version \_Local**
+2. Giải nén và chạy file `.exe`
+3. Test đầy đủ các tính năng:
+   - Login/Register
+   - Quản lý Projects
+   - Quản lý Tasks
+   - Gán công việc
+4. Source code C# đầy đủ tại repository
+
+## Support
 
 Nếu gặp vấn đề:
 
@@ -243,10 +225,10 @@ Nếu gặp vấn đề:
 - Check token format: `Bearer <token>`
 - Check .env file có đúng không
 
-## 📝 License
+## License
 
 ISC
 
-## 👨‍💻 Author
+## Author
 
 NguyenThuan_NAUTH - 23CT113
