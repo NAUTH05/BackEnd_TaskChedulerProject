@@ -199,21 +199,16 @@ Login → Get Token → Create Task → Assign to User → Update Status → Com
 ### Status code
 
 1. 2xx - Success (Thành công)
-
-- 200 OK: Request thành công, trả về data (GET, PUT)
-- 201 Created: Tạo mới thành công (POST)
-- 204 No Content: Thành công nhưng không có data trả về (DELETE)
-
+   - 200 OK: Request thành công, trả về data (GET, PUT)
+   - 201 Created: Tạo mới thành công (POST)
+   - 204 No Content: Thành công nhưng không có data trả về (DELETE)
 2. 4xx - Client Error (Lỗi từ phía client)
-
-- 400 Bad Request: Dữ liệu gửi lên sai format, thiếu field
-- 401 Unauthorized: Chưa đăng nhập, không có token
-- 403 Forbidden: Đã login nhưng không có quyền truy cập
-- 404 Not Found: Không tìm thấy resource (user, project, task)
-
+   - 400 Bad Request: Dữ liệu gửi lên sai format, thiếu field
+   - 401 Unauthorized: Chưa đăng nhập, không có token
+   - 403 Forbidden: Đã login nhưng không có quyền truy cập
+   - 404 Not Found: Không tìm thấy resource (user, project, task)
 3. 5xx - Server Error (Lỗi server)
-
-- 500 Internal Server Error: Lỗi server không mong đợi
+   - 500 Internal Server Error: Lỗi server không mong đợi
 
 ## Support
 
