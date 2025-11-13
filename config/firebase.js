@@ -3,12 +3,9 @@ import admin from 'firebase-admin';
 import { readFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-
 dotenv.config();
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
 try {
   let serviceAccount;
   try {
@@ -20,15 +17,12 @@ try {
       readFileSync(join(__dirname, '..', 'taskschedulerproject-15f1b-firebase-adminsdk-fbsvc-c8a71878fe.json'), 'utf8')
     );
   }
-
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
   });
-
   console.log('Firebase initialized');
 } catch (error) {
   console.log('Using environment variables...');
-
   admin.initializeApp({
     credential: admin.credential.cert({
       projectId: process.env.FIREBASE_PROJECT_ID,
@@ -37,8 +31,5 @@ try {
     })
   });
 }
-
 const db = admin.firestore();
-
 export { admin, db };
-
